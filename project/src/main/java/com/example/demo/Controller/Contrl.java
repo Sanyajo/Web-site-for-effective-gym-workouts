@@ -18,12 +18,12 @@ public class Contrl {
     private final AboutUsService aboutUsService;
     private final PriceService priceService;
 
-    @GetMapping("/SportStorm")
-    public String startPage(){
-        return "start";
+    @GetMapping("/main")
+    public String redirectMainPage(){
+        return "redirect:/SportStorm";
     }
 
-    @GetMapping("/main")
+    @GetMapping("/SportStorm")
     public String mainPage(Model model){
         model.addAttribute("listSliderHead", sliderService.getSliderByType("mainWindHead"));
         model.addAttribute("progrList", traningProgramService.getAllTraningProgram());
@@ -31,6 +31,20 @@ public class Contrl {
         model.addAttribute("priceList", priceService.getAllPrice());
         return "main";
     }
+
+
+    @GetMapping("/traningProgram")
+    public String redirectTraningProgram(Model model){
+        return "redirect:/traning-program";
+    }
+
+    @GetMapping("/traning-program")
+    public String traningProgram(Model model){
+        model.addAttribute("progrList", traningProgramService.getAllTraningProgram());
+        return "traningprogram";
+    }
+
+
 }
 
 

@@ -46,7 +46,7 @@
                         <div class="info1InnerBlock">
                             <p3>${prlist.getProgrName()}</p3>
                             <p4>${prlist.getProgrInfo()}</p4>
-                            <form action="#" method="post">
+                            <form action="/${prlist.getProgrName()}" method="post">
                                 <button type="submit">Подробнее</button>
                             </form>
                         </div>
