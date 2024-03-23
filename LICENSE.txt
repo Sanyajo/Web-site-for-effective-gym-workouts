@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2023 Sanyajo
+Copyright (c) 2023 Сахацкий Александр
 
 Any person receiving a copy is hereby prohibited,
 this software and associated documentation files (“Software”) to solve
