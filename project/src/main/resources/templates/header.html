@@ -1,0 +1,176 @@
+<style>
+    /*__Хеадер формы__*/
+    .header {
+        margin: 20px 0px 0px 0px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 80px;
+        position: absolute;
+        top: 0; /* Align the header to the top of the viewport */
+        z-index: 2; /* Set a higher z-index to bring the header on top */
+        /*border-radius: 16px;*/
+    }
+
+    .header1 {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1000px;
+        height: 100%;
+    }
+    .header1 p1{
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .header2 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    .header3 {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .header2 form button{
+        color: white;
+        margin: 0px 20px 0px 0px;
+        font-size: 22px;
+        width: 100%;
+        border: none;
+        background-color: rgba(255,95,50,0);
+        cursor: pointer;
+    }
+    .header2 form button:hover{
+        height: 40px;
+        background-color: #737373;
+        color: white;
+        border-radius: 15px;
+        opacity: 0.9;
+    }
+    .header2 form button:active{
+        transform: scale(0.95);
+    }
+
+    .header img{
+        margin: 0px 0px 0px 25px;
+        width: 70px;
+        height: 70px;
+        border-radius: 70%;
+    }
+    .header input {
+        position: relative; /* Добавляем позиционирование для псевдоэлемента */
+        border-radius: 15px;
+        background: white url("/images/headerDir/searchImage.png") no-repeat right 10px center; /* Добавляем иконку в качестве фонового изображения */
+        background-size: 20px; /* Размер иконки */
+        width: 300px; /* Ширина минус размер иконки и ее отступ */
+        padding: 10px 30px 10px 10px; /* Отступы для текста и иконки */
+        border: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+        color: black;
+    }
+    .header input:focus {
+        outline: none; /* Убираем обводку при фокусе */
+    }
+
+    .calendarButton {
+        width: 35px;
+        height: 35px;
+        border: none;
+        background: url("/images/headerDir/calendar.svg") center center/cover no-repeat;
+        cursor: pointer;
+    }
+    .calendarButton:hover{
+        color:#bebebe;
+        opacity: 0.8;
+    }
+    .calendarButton:active{
+        transform: scale(0.95);
+    }
+
+    .userButton {
+        width: 35px;
+        height: 35px;
+        border: none;
+        background: url("/images/headerDir/user.svg") center center/cover no-repeat;
+        cursor: pointer;
+    }
+    .userButton:hover {
+        color:#bebebe;
+        opacity: 0.8;
+    }
+    .userButton:active {
+        transform: scale(0.95);
+    }
+
+    .mapLoctButton {
+        width: 35px;
+        height: 35px;
+        border: none;
+        background: url("/images/headerDir/mapLocation.svg") center center/cover no-repeat;
+        cursor: pointer;
+    }
+    .mapLoctButton:hover {
+        color:#bebebe;
+        opacity: 0.8;
+    }
+    .mapLoctButton:active {
+        transform: scale(0.95);
+    }
+</style>
+
+<div class="header">
+
+    <div class="header1">
+        <p1>SPORT<br>STORM</p1>
+    </div>
+
+    <div class="header2">
+        <form action="/main" target="_self">
+            <button class="mainButton">Главная</button>
+        </form>
+
+        <form action="/#" target="_self">
+            <button class="progrButton">Программы</button>
+        </form>
+
+        <form action="/#" target="_self">
+            <button class="newsButton">Питание</button>
+        </form>
+
+        <form action="/#" target="_self">
+            <button class="gymButton">Не придумал</button>
+        </form>
+    </div>
+
+    <div class="header3">
+        <form action="/#" method="post">
+            <input type="text" id="search-input" name="search-input" placeholder="Поиск"/>
+        </form>
+
+        <form action="/#" target="_self">
+            <button class="calendarButton"></button>
+        </form>
+
+        <form action="/#" target="_self">
+            <button class="mapLoctButton"></button>
+        </form>
+
+        <form action="/#" target="_self">
+            <button class="userButton"></button>
+        </form>
+    </div>
+</div>
