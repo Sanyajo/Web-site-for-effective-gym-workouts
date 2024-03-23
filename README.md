@@ -1,1 +1,1 @@
-# Web-site-for-effective-gym-workouts
+# Веб сайт для эффективных занятий спортом
