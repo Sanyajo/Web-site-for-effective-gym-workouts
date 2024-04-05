@@ -23,6 +23,4 @@ public class AboutUs {
     @Column(name="info")
     private String info;
 
-    @Column(name="iconsurl")
-    private String iconsurl;
 }

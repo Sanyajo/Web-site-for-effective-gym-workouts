@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 
-public interface AboutUsRepository extends JpaRepository<AboutUs, Long> {
+public interface AboutUsRepo extends JpaRepository<AboutUs, Long> {
     List<AboutUs> findAll();
 }

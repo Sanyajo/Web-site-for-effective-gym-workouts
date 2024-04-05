@@ -25,4 +25,13 @@ public class AllTraningProgram {
 
     @Column(name="imgurl")
     private String imageUrl;
+
+    @Column(name="type")
+    private String traningType;
+
+    @Column(name="jsonurl")
+    private String progrJsonUrl;
+
+    @Column(name="videourl")
+    private String videoUrl;
 }

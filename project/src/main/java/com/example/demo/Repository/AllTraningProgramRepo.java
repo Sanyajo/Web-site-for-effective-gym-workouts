@@ -5,7 +5,9 @@ import com.example.demo.Models.AllTraningProgram;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
-public interface AllTraningProgramRepository extends JpaRepository<AllTraningProgram, Long> {
+public interface AllTraningProgramRepo extends JpaRepository<AllTraningProgram, Long> {
 
     List<AllTraningProgram> findAll();
+
+    AllTraningProgram findByProgrName(String progrname);
 }
