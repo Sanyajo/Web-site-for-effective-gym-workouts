@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Программы тренировок</title>
     <link rel="stylesheet" href="/css/traningProgram.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
@@ -24,13 +24,18 @@
 
     <#list progrList as prlist>
         <div class="mySlides fade">
-            <img src="${prlist.getImageUrl()}" style="width:100%; height: 800px; object-fit: cover">
-            <div class="text">
-                <p1>${prlist.getProgrName()}</p1>
-                <p2>${prlist.getProgrInfo()}</p2>
-                <form action="/${prlist.getProgrName()}" method="post">
-                    <button type="submit">Подробнее</button>
-                </form>
+
+            <div class="text-block">
+                <div class="text-block-Inner">
+                    <h1>${prlist.getProgrName()}</h1>
+                    <p>${prlist.getProgrInfo()}</p>
+                    <form action="/traning-program/${prlist.getProgrName()}" method="post">
+                        <button type="submit">Подробнее</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pic-block">
+                <img src="${prlist.getImageUrl()}" style="width:100%; height: 800px;margin: 0px 0px 0px 65px; object-fit: cover">
             </div>
 
         </div>

@@ -19,7 +19,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 1000px;
+        width: 900px;
         height: 100%;
     }
     .header1 p1{
@@ -35,15 +35,6 @@
         width: 100%;
         height: 100%;
     }
-    .header3 {
-        display: flex;
-        justify-content: space-around;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-    }
-
     .header2 form button{
         color: white;
         margin: 0px 20px 0px 0px;
@@ -55,8 +46,8 @@
     }
     .header2 form button:hover{
         height: 40px;
-        background-color: #737373;
-        color: white;
+        background-color: #00FFFF;
+        color: black;
         border-radius: 15px;
         opacity: 0.9;
     }
@@ -70,35 +61,8 @@
         height: 70px;
         border-radius: 70%;
     }
-    .header input {
-        position: relative; /* Добавляем позиционирование для псевдоэлемента */
-        border-radius: 15px;
-        background: white url("/images/headerDir/searchImage.png") no-repeat right 10px center; /* Добавляем иконку в качестве фонового изображения */
-        background-size: 20px; /* Размер иконки */
-        width: 300px; /* Ширина минус размер иконки и ее отступ */
-        padding: 10px 30px 10px 10px; /* Отступы для текста и иконки */
-        border: 0;
-        box-sizing: border-box;
-        font-size: 16px;
-        color: black;
-    }
     .header input:focus {
         outline: none; /* Убираем обводку при фокусе */
-    }
-
-    .calendarButton {
-        width: 35px;
-        height: 35px;
-        border: none;
-        background: url("/images/headerDir/calendar.svg") center center/cover no-repeat;
-        cursor: pointer;
-    }
-    .calendarButton:hover{
-        color:#bebebe;
-        opacity: 0.8;
-    }
-    .calendarButton:active{
-        transform: scale(0.95);
     }
 
     .userButton {
@@ -116,20 +80,6 @@
         transform: scale(0.95);
     }
 
-    .mapLoctButton {
-        width: 35px;
-        height: 35px;
-        border: none;
-        background: url("/images/headerDir/mapLocation.svg") center center/cover no-repeat;
-        cursor: pointer;
-    }
-    .mapLoctButton:hover {
-        color:#bebebe;
-        opacity: 0.8;
-    }
-    .mapLoctButton:active {
-        transform: scale(0.95);
-    }
 </style>
 
 <div class="header">
@@ -153,20 +103,6 @@
 
         <form action="/#" target="_self">
             <button class="gymButton">Упражнения</button>
-        </form>
-    </div>
-
-    <div class="header3">
-        <form action="/#" method="post">
-            <input type="text" id="search-input" name="search-input" placeholder="Поиск"/>
-        </form>
-
-        <form action="/#" target="_self">
-            <button class="calendarButton"></button>
-        </form>
-
-        <form action="/#" target="_self">
-            <button class="mapLoctButton"></button>
         </form>
 
         <form action="/#" target="_self">

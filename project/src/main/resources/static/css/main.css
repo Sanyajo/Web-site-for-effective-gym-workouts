@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
     margin: 0;
+    background-color: #121212;
     /*background-color: #5223AF;*/
     /*overflow: hidden; !* Убираем полосу прокрутки *!*/
 }
@@ -148,53 +149,69 @@ img {vertical-align: middle;}
 /*__Блок с выбором программы__*/
 .trainBlock{
     text-align: center;
-    background: url("../images/mainWind/programBack.jpg");
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    /*height: 100%;*/
-    background-color: #5223AF;
+    height: 100%;
+    background-color: #121212;
     color:white;
 }
-.trainBlock p1{
-    margin: 50px 0px 20px 0px;
-    font-size: 54px;
+
+.trainBlockTextContainer{
+    width: 1000px;
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    flex-direction: column;
+}
+.trainBlockTextContainer p1{
+    margin: 0px 20px 30px 20px;
+    border-bottom: 2px solid #00FFFF;
+    padding: 0px 0px 20px 0px;
+    font-size: 40px;
     font-weight: bold;
     color: white;
 }
-
-.trainBlock p2{
-    margin: 0px 200px 50px 200px;
-    font-size: 22px;
+.trainBlockTextContainer p2{
+    margin: 0px 20px;
+    font-size: 18px;
     color: white;
 }
 
+
+
 .tableProgr{
+    margin:10px 0px 0px 0px;
     width: 100%;
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    /*grid-template-rows: auto;*/
+    grid-template-columns: auto auto;
+    /*!* grid-template-rows: auto;*/
 }
 
 .info1{
-    width: 100%;
-    height: 580px;
-    /*margin: 20px;*/
+    width: 350px;
+    height: 300px;
+     margin: 20px;
     position: relative;
     text-align: center;
     color: black;
+    border-radius: 15px;
+
 }
 .info1 img{
     width: 100%;
-    height: 580px;
+    height: 100%;
     filter: brightness(40%);
     object-fit: cover;
+    border-radius: 15px;
 }
 .info1InnerBlock{
-    width: 70%;
+    width: 100%;
     /*height: 30%;*/
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     position: absolute;
     top: 65%;
@@ -206,7 +223,7 @@ img {vertical-align: middle;}
     text-align: left;
     font-weight: bold;
     color: white;
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 30px 0px;
 }
 .info1InnerBlock p4{
     color: white;
@@ -216,103 +233,192 @@ img {vertical-align: middle;}
     margin: 0px 0px 40px 0px;
 }
 .info1InnerBlock button{
-    color: white;
+    color: black;
     height: 40px;
     border-radius: 15px;
     /*margin: 0px 20px 0px 0px;*/
     width: 150px;
-    border: 2px solid white;
-    background-color: rgba(255,95,50,0);
+    border: 2px solid #00FFFF;
+    background-color: #00FFFF;
     cursor: pointer;
+    opacity: 0.8;
     font-size: 18px;
 }
 .info1InnerBlock button:hover{
-    background-color: #bebebe;
+    border-color: rgba(0, 255, 255, 0.49);
+    background-color: rgba(0, 255, 255, 0.49);
     color: white;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 /*____Блок почему выбирают нас___*/
 
 .aboutUsBlock{
-    text-align: center;
-    /*margin: 100px 0px 0px 0px;*/
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    /*height: 100%;*/
-    /*background-color: #5223AF;*/
-    color:white;
-    background: url("../images/mainWind/programBack.jpg");
-
-}
-.aboutUsBlock p1{
-    margin: 50px 0px 20px 0px;
-    font-size: 54px;
-    font-weight: bold;
-    color: white;
-}
-.aboutUsBlock p2{
-    margin: 0px 200px 50px 200px;
-    font-size: 22px;
-    color: white;
-}
-
-.UsTable{
-    background-color: #151515;
-    width: 100%;
-    height: 600px;
-    display: grid;
-    grid-template-columns: auto auto;
-    /*grid-template-rows: auto;*/
-}
-
-.infoUsTable{
+    background-color: #121212;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    /*height: 100%;*/
-    /*margin: 20px;*/
-    color: black;
-    margin: 10px 0px 10px 0px;
+    height: 700px;
+    color: white;
+}
+.aboutUsBlock p1{
+    padding: 0px 0px 30px 0px;
+    margin: 0px 0px 30px 0px;
+    border-bottom: 2px solid #00FFFF;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
 }
 
-.infoUsTable p3{
+.UsTable{
+    background-color: #121212;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.infoUsTableBlack{
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 450px;
+    height: 200px;
+    margin: 10px;
+    background: #2d2d2d;
+}
+.infoUsTableBlue{
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 450px;
+    margin: 10px;
+    height: 200px;
+    background: #1BCCCC;
+}
+.infoUsTableBlack p3{
     font-size: 28px;
     font-weight: bold;
     color: white;
     margin: 0px 0px 10px 0px;
-    width: 500px;
+    /* width: 500px; */
     text-align: left;
 }
-
-.infoUsTable p4{
-    font-size: 18px;
-    width: 500px;
-    text-align: left;
+.infoUsTableBlue p3{
+    font-size: 28px;
+    font-weight: bold;
     color: #bebebe;
-}
-.infoUsTableIcon{
-    width: 500px;
+    margin: 0px 0px 10px 0px;
+    /* width: 500px; */
     text-align: left;
 }
-
+.infoUsTableBlack p4{
+    font-size: 18px;
+    /* width: 500px; */
+    text-align: center;
+    color: #bebebe;
+    padding: 0px 10px 0px 10px;
+}
+.infoUsTableBlue p4{
+    font-size: 18px;
+    /* width: 500px; */
+    text-align: center;
+    color: white;
+    padding: 0px 10px 0px 10px;
+}
 .infoUsTableIcon img{
     width: 90px;
     height: 90px;
     border-radius: 25px;
     object-fit: cover;
-    background: #636363;
+    opacity: 0.9;
+    background: #00FFFF;
     margin: 0px 0px 15px 0px;
 }
+
+/*______Блок информации о нас_______*/
+
+.infoContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden; /* Добавлено */
+    position: relative; /* Добавлено */
+}
+
+.infoContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.infoInnerContainer {
+    justify-content: center;
+    display: flex;
+    width: 800px;
+    height: 100%;
+    position: absolute;
+    flex-direction: column;
+    transform: skew(24deg);
+    background-color: #121212;
+    left: 60%;
+    overflow: hidden; /* Добавлено */
+    z-index: 1; /* Добавлено */
+}
+
+.infoInfoInnerContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: skew(-24deg);
+    margin: 0px 200px 0px 0px;
+}
+
+
+.getInfoLinkTextCont img {
+    width: 50px;
+    height: 50px;
+    margin: 0px 50px 0px 0px;
+}
+.getInfoLinkTextCont{
+    margin: 0px 0px 20px 0px;
+}
+
+.infoInfoInnerContainer p1{
+    font-size: 40px;
+    font-weight: bold;
+    width: 70%;
+    text-align: center;
+    color: white;
+    margin: 0px 0px 40px 0px;
+    padding: 0px 0px 30px 0px;
+    border-bottom: 2px solid #00FFFF;
+}
+
+
+.getInfoLinkTextCont a{
+    font-size: 18px;
+    color: white;
+}
+
+
+
 
 /*_______Блок цен_____*/
 .pricingPlanBlock {
     position: relative;
     width: 100%;
-    background-color: #151515;
+    height: 800px;
+    padding: 100px 0px 0px 0px;
+    margin: 0px 0px 100px 0px;
 }
 
 .pricingPlanBlock video {
@@ -323,7 +429,7 @@ img {vertical-align: middle;}
 .priceGrid {
     text-align: center;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 0;
     right: 0;
     transform: translateY(-50%);
@@ -347,6 +453,7 @@ img {vertical-align: middle;}
 }
 
 .priceGridBlock {
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -361,7 +468,7 @@ img {vertical-align: middle;}
     text-transform: uppercase;
     font-weight: bold;
     font-size: 36px;
-    margin: 0px 0px 40px 0px;
+    margin: 40px 0px 40px 0px;
 }
 
 .priceGridBlock p2{
@@ -383,9 +490,17 @@ img {vertical-align: middle;}
     margin: 0px 0px 20px 0px;
 }
 
-
-.priceGridBlock p4{
+.priceGridBlockDopInfo{
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+.priceGridBlockDopInfo p4{
     color: white;
     font-size: 24px;
-    margin: 0px 0px 20px 0px;
+}
+
+.priceGridBlock li{
+    color: #00FFFF;
+    margin: 0px 0px 20px 20px;
 }

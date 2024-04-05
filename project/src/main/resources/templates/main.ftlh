@@ -13,7 +13,7 @@
 <style>
     @font-face {
         font-family: Sport;
-        src: url("/static/fonts/SportsWorld.otf");
+        src: url("static/fonts/SportsWorld.otf");
     }
 </style>
 
@@ -37,16 +37,17 @@
         </div>
 
         <div class="trainBlock">
-            <p1>Выберитe программу</p1>
-            <p2>Наши эксперты по кроссфиту помогут вам открыть для себя новые техники тренировок и упражнения, которые обеспечивают динамичную и эффективную тренировку всего тела.</p2>
+            <div class="trainBlockTextContainer">
+                <p1>Выберитe программу</p1>
+                <p2>Наши эксперты по кроссфиту помогут вам открыть для себя новые техники тренировок и упражнения, которые обеспечивают динамичную и эффективную тренировку всего тела.</p2>
+            </div>
             <div class="tableProgr">
                 <#list progrList as prlist>
                     <div class="info1" data-seriestype="#" data-series="#">
                         <img src="${prlist.getImageUrl()}">
                         <div class="info1InnerBlock">
                             <p3>${prlist.getProgrName()}</p3>
-                            <p4>${prlist.getProgrInfo()}</p4>
-                            <form action="/${prlist.getProgrName()}" method="post">
+                            <form action="/traning-program/${prlist.getProgrName()}" method="post">
                                 <button type="submit">Подробнее</button>
                             </form>
                         </div>
@@ -57,17 +58,56 @@
 
         <div class="aboutUsBlock">
             <p1>Почему выбирают нас </p1>
-            <p2>Наши спортивные эксперты и новейшая спортивная система - это выигрышная комбинация.</p2>
-            <div class="UsTable">
-                <#list aboutuslist as list>
-                    <div class="infoUsTable" data-seriestype="#" data-series="#">
-                        <div class="infoUsTableIcon">
-                            <img src="${list.getIconsurl()}">
-                        </div>
-                        <p3>${list.getTitle()}</p3>
-                        <p4>${list.getInfo()}</p4>
+           <div class="UsTable">
+               <div class="infoUsTableBlack" data-seriestype="#" data-series="#">
+                        <p3>Техническая поддержка</p3>
+                        <p4>Наша команда экспертов всегда готова помочь вам разобраться с любыми техническими вопросами. Доверьтесь профессионалам и сосредоточьтесь на своих целях!</p4>
                     </div>
-                </#list>
+               <div class="infoUsTableBlue" data-seriestype="#" data-series="#">
+                   <p3>Сообщество</p3>
+                   <p4>Здесь каждый - часть большого спортивного семейства. Вместе мы вдохновляемся, растем и достигаем новых вершин!</p4>
+               </div>
+               <div class="infoUsTableBlack" data-seriestype="#" data-series="#">
+                   <p3>Мониторинг-здоровья</p3>
+                   <p4>Следите за своим здоровьем, чтобы вы могли наслаждаться каждым моментом вашей спортивной жизни. Мы заботимся о вашем благополучии</p4>
+               </div>
+               <div class="infoUsTableBlue" data-seriestype="#" data-series="#">
+                   <p3>Системы питания</p3>
+                   <p4>Мы предлагаем вам питание, которое не только удовлетворяет ваш аппетит, но и помогает достичь максимальных результатов в тренировках</p4>
+               </div>
+               <div class="infoUsTableBlack" data-seriestype="#" data-series="#">
+                   <p3>Мониторинг-здоровья</p3>
+                   <p4>Мы предлагаем вам питание, которое не только удовлетворяет ваш аппетит, но и помогает достичь максимальных результатов в тренировках</p4>
+               </div>
+               <div class="infoUsTableBlue" data-seriestype="#" data-series="#">
+                   <p3>Техническая поддержка</p3>
+                   <p4>Наша команда экспертов всегда готова помочь вам разобраться с любыми техническими вопросами. Доверьтесь профессионалам и сосредоточьтесь на своих целях!</p4>
+               </div>
+            </div>
+
+        </div>
+
+        <div class="infoContainer">
+            <img src="/images/mainWind/info.jpeg">
+
+            <div class="infoInnerContainer">
+                <div class="infoInfoInnerContainer">
+                    <p1>Контакты</p1>
+                    <div class="getInfoInfoInnerContainer">
+                        <div class="getInfoLinkTextCont">
+                            <img src="/images/mainWind/telegram.png">
+                            <p2><a href="sportstormmanager@gmail.com">SportStormOfficial</a></p2>
+                        </div>
+                        <div class="getInfoLinkTextCont">
+                            <img src="/images/mainWind/mail.png">
+                            <p2><a href="sportstormmanager@gmail.com">sportstormmanager</a></p2>
+                        </div>
+                        <div class="getInfoLinkTextCont">
+                            <img src="/images/mainWind/instagram.png">
+                            <p2><a href="sportstormmanager@gmail.com">SportStormOfficial</a></p2>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -84,9 +124,11 @@
                             <p1>${prlist.getType()}</p1>
                             <p2>${prlist.getPrice()} $</p2>
                             <p3>${prlist.getTime()}</p3>
-                            <#list prlist.getInfo() as info>
-                                <p4>${info}</p4>
-                            </#list>
+                            <div class="priceGridBlockDopInfo">
+                                <#list prlist.getInfo() as info>
+                                    <li><p4>${info}</p4></li>
+                                </#list>
+                            </div>
                         </div>
                     </#list>
                 </div>
