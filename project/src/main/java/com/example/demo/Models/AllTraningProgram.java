@@ -34,4 +34,5 @@ public class AllTraningProgram {
 
     @Column(name="videourl")
     private String videoUrl;
+
 }

@@ -27,6 +27,8 @@ public class GymMachines {
     @Column(name="type")
     private String gymMachimesType;
 
+    @Column(name="musclegroup")
+    private String muscleGroup;
 
     public String[] getGymMachimesType() {
         return gymMachimesType != null ? gymMachimesType.split(",") : new String[0];
@@ -36,5 +38,16 @@ public class GymMachines {
         this.gymMachimesType = info != null ? String.join(",", info) : null;
     }
 
+    public String getMuscleGroupStr(){
+        return this.muscleGroup;
+    }
+
+    public String[] getMuscleGroup(){
+        return muscleGroup != null ? muscleGroup.split(",") : new String[0];
+    }
+
+    public void setMuscleGroup(String[] info) {
+        this.muscleGroup = info != null ? String.join(",", info) : null;
+    }
 
 }

@@ -1,7 +1,5 @@
 package com.example.demo.Models;
 
-
-//import com.example.demo.Converter.StringArrayConverter;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,6 +34,5 @@ public class Price {
     public void setInfo(String[] info) {
         this.info = info != null ? String.join(",", info) : null;
     }
-
 
 }
