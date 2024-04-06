@@ -15,6 +15,10 @@ public class SliderService {
     private final SliderRepo sliderRepository;
 
     public List<Slider> getSliderByType(String type){
+        if (type == null) {
+            log.error("Передаваемое значение тренажера равен null !");
+            return List.of();
+        }
         return sliderRepository.findSliderByType(type);
     }
 

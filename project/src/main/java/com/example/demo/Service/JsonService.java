@@ -24,8 +24,6 @@ public class JsonService {
         File file = new File(allTraningProgram.getProgrJsonUrl());
 
         // Deserialize array of Program objects
-        Program[] programs = mapper.readValue(file, Program[].class);
-
-        return  programs;
+        return mapper.readValue(file, Program[].class);
     }
 }

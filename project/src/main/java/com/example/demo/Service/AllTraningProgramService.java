@@ -21,6 +21,9 @@ public class AllTraningProgramService {
     }
 
     public AllTraningProgram getTrainByName(String trainName){
-        return traningProgramRepository.findByProgrName(trainName);
+        if(trainName != null){
+            return traningProgramRepository.findByProgrName(trainName);
+        }
+        return null;
     }
 }
