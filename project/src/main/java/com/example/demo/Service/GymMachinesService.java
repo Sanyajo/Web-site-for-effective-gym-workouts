@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -21,7 +20,10 @@ public class GymMachinesService {
             log.error("Передаваемое значение тренажера равен null !");
             return List.of();
         }
-
         return gymMachinesRepo.findByGymMachimesTypeContaining(typeGymMachine);
+    }
+
+    public List<GymMachines> getAllGymMachines(){
+        return gymMachinesRepo.findAll();
     }
 }
