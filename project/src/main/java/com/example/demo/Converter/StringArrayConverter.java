@@ -2,7 +2,6 @@ package com.example.demo.Converter;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
-import java.util.Arrays;
 
 @Converter
 public class StringArrayConverter implements AttributeConverter<String[], String> {
