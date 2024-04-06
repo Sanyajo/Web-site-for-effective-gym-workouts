@@ -56,26 +56,6 @@
             </div>
         </#if>
 
-<#--        <#if progrList?has_content>-->
-<#--            <div class="progrInfoConteiner">-->
-<#--                <p1>Программы тренировок</p1>-->
-<#--                <div class="progrInfoTextConteinerBlock">-->
-<#--                    <#list progrList as program>-->
-<#--                        <div class="progrInfoTextConteiner">-->
-<#--                            <p2>${program.progrName}</p2>-->
-<#--                            <#if program.progrTraner??>-->
-<#--                                <#list program.progrTraner as ass>-->
-<#--                                        <p3>Тренажер:   ${ass.trainName}</p3>-->
-<#--                                        <p4>Кол-во подходов:    ${ass.kollpodh}</p4>-->
-<#--                                </#list>-->
-<#--                            </#if>-->
-<#--                            <p3>${program.progrInfo}</p3>-->
-<#--                        </div>-->
-<#--                    </#list>-->
-<#--                </div>-->
-<#--            </div>-->
-<#--        </#if>-->
-
         <div class="sliderMain2">
             <div class="progrInfo">
                 <p2>Программы тренировок</p2>
@@ -87,22 +67,21 @@
                 <#list progrList as program>
                     <li class="card2">
                         <div class="progrInfoTextConteiner">-->
-                                                        <p2>${program.progrName}</p2>
-                                                        <#if program.progrTraner??>
-                                                            <#list program.progrTraner as ass>
-                                                                    <p3>Тренажер:   ${ass.trainName}</p3>
-                                                                    <p4>Кол-во подходов:    ${ass.kollpodh}</p4>
-                                                            </#list>
-                                                        </#if>
-                                                        <p3>${program.progrInfo}</p3>
-                                                    </div>
+                            <p2>${program.progrName}</p2>
+                            <#if program.progrTraner??>
+                                <#list program.progrTraner as ass>
+                                    <p3>Тренажер:   ${ass.trainName}</p3>
+                                    <p4>Кол-во подходов:    ${ass.kollpodh}</p4>
+                                </#list>
+                            </#if>
+                            <p3>${program.progrInfo}</p3>
+                        </div>
                     </li>
                 </#list>
             </ul>
             <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
     </div>
-
 
         <#include "footer.html">
     </div>

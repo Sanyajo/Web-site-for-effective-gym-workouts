@@ -1,0 +1,104 @@
+html, body {
+    background-color: #151515;
+    height: 100%;
+    margin: 0;
+    color: white;
+}
+
+* {
+    font-family: Sport;
+}
+
+.mainCont {
+    width: 100%;
+    height: 100%;
+}
+
+/*________Заставка__________*/
+
+.headWallpers{
+    width: 100%;
+    background: #000;
+}
+.headWallpers img {
+    height: 800px;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.headWallpersText{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+}
+
+.headWallpersText p1{
+    font-size: 58px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/*____Слайдер____*/
+.containerSlider{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.containerSliderText{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 21px 0px 20px;
+}
+
+.containerSliderText p1{
+    font-size: 40px;
+    margin: 0px 0px 20px 0px;
+}
+
+.containerSliderText p2{
+    font-size: 18px;
+    margin: 0px 0px 0px 20px;
+}
+
+.sketchfab-embed-wrapper{
+    background: #2d2d2d;
+    border-radius: 15px;
+    opacity: 0.9;
+    margin: 10px 0px 0px 30px;
+}
+
+
+/*____Кнопки выбора_____*/
+.selectButton {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px 0px 50px 0px;
+}
+
+.selectButton button {
+    margin: 0px 40px 0px 0px;
+    /* width: 150px; */
+    height: 50px;
+    line-height: 38px;
+    font-size: 24px;
+    /* font-weight: 600; */
+    color: #D9D6D2;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+
+.selectButton button.underline,
+.selectButton button:focus {
+    border-bottom: 2px solid #00FFFF;
+}

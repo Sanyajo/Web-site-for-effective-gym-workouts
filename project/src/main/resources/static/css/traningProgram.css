@@ -15,18 +15,13 @@ html, body {
 
 }
 
-/*__Слайдер__*/
 .mySlides {display: none}
-/*img {vertical-align: middle;*/
-/*opacity: 0.6;}*/
 
-/* Slideshow container */
 .slideshow-container {
     width: 100%;
     /*height: 750px;*/
 }
 
-/* Next & previous buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -41,17 +36,14 @@ html, body {
     border-radius: 0 3px 3px 0;
 }
 
-/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
-
 
 .text-block {
     display: flex;
@@ -73,6 +65,7 @@ html, body {
     align-items: center;
     flex-direction: column;
 }
+
 .text-block-Inner h1 {
     text-align: center;
     width: 700px;
@@ -93,10 +86,12 @@ html, body {
     font-size: 18px;
     color: white;
 }
+
 .pic-block {
     width: 50%;
     float: right;
 }
+
 .pic-block img {
     display: block;
     max-width: 100%;
@@ -106,7 +101,6 @@ html, body {
     background-color: #717171;
 }
 
-/* Fading animation */
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -125,14 +119,15 @@ html, body {
     to {opacity: 1}
 }
 
-/* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
     .prev, .next,.text {font-size: 11px}
 }
+
 .text-block form{
     transform: skew(-25deg);
     padding: 0px 160px 0px 0px;
 }
+
 .text-block button{
     color: black;
     height: 40px;
@@ -144,6 +139,7 @@ html, body {
     cursor: pointer;
     font-size: 18px;
 }
+
 .text-block button:hover{
     border-color: rgba(0, 255, 255, 0.49);
     background-color: rgba(0, 255, 255, 0.49);

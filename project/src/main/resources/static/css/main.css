@@ -20,7 +20,6 @@ html, body {
     /*justify-content: center;*/
 }
 
-/*__Cелектор выбора тренировок_*/
 .selectionTraning {
     display: flex;
     align-items: center;
@@ -28,6 +27,7 @@ html, body {
     justify-content: center;
     margin:20px 0px 20px 0px;
 }
+
 .selectionTraning button {
     margin: 0px 40px 0px 0px;
     /*width: 150px;*/
@@ -39,6 +39,7 @@ html, body {
     border: 2px solid rgba(255, 255, 255, 0); /* Fully transparent border */
     cursor: pointer;
 }
+
 .selectionTraning button.underline,
 .selectionTraning button:focus {
     border: 2px solid #F9D9D1;
@@ -47,17 +48,14 @@ html, body {
     border-radius: 15px;
 }
 
-/*__Слайдер__*/
 .mySlides {display: none}
 img {vertical-align: middle;}
 
-/* Slideshow container */
 .slideshow-container {
    width: 100%;
     /*height: 750px;*/
 }
 
-/* Next & previous buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -72,18 +70,15 @@ img {vertical-align: middle;}
     border-radius: 0 3px 3px 0;
 }
 
-/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
 .text {
     color: #f2f2f2;
     font-size: 100px;
@@ -97,7 +92,6 @@ img {vertical-align: middle;}
     text-align: center;
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
     color: #f2f2f2;
     font-size: 12px;
@@ -106,7 +100,6 @@ img {vertical-align: middle;}
     top: 0;
 }
 
-/* The dots/bullets/indicators */
 .dot {
     cursor: pointer;
     height: 15px;
@@ -122,7 +115,6 @@ img {vertical-align: middle;}
     background-color: #717171;
 }
 
-/* Fading animation */
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -140,13 +132,10 @@ img {vertical-align: middle;}
     to {opacity: 1}
 }
 
-/* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
     .prev, .next,.text {font-size: 11px}
 }
 
-
-/*__Блок с выбором программы__*/
 .trainBlock{
     text-align: center;
     display: flex;
@@ -165,6 +154,7 @@ img {vertical-align: middle;}
     text-align: left;
     flex-direction: column;
 }
+
 .trainBlockTextContainer p1{
     margin: 0px 20px 30px 20px;
     border-bottom: 2px solid #00FFFF;
@@ -173,13 +163,12 @@ img {vertical-align: middle;}
     font-weight: bold;
     color: white;
 }
+
 .trainBlockTextContainer p2{
     margin: 0px 20px;
     font-size: 18px;
     color: white;
 }
-
-
 
 .tableProgr{
     margin:10px 0px 0px 0px;
@@ -199,6 +188,7 @@ img {vertical-align: middle;}
     border-radius: 15px;
 
 }
+
 .info1 img{
     width: 100%;
     height: 100%;
@@ -206,6 +196,7 @@ img {vertical-align: middle;}
     object-fit: cover;
     border-radius: 15px;
 }
+
 .info1InnerBlock{
     width: 100%;
     /*height: 30%;*/
@@ -218,6 +209,7 @@ img {vertical-align: middle;}
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .info1InnerBlock p3{
     font-size: 34px;
     text-align: left;
@@ -225,6 +217,7 @@ img {vertical-align: middle;}
     color: white;
     margin: 0px 0px 30px 0px;
 }
+
 .info1InnerBlock p4{
     color: white;
     font-size: 18px;
@@ -232,6 +225,7 @@ img {vertical-align: middle;}
     height: 150px;
     margin: 0px 0px 40px 0px;
 }
+
 .info1InnerBlock button{
     color: black;
     height: 40px;
@@ -244,14 +238,13 @@ img {vertical-align: middle;}
     opacity: 0.8;
     font-size: 18px;
 }
+
 .info1InnerBlock button:hover{
     border-color: rgba(0, 255, 255, 0.49);
     background-color: rgba(0, 255, 255, 0.49);
     color: white;
     opacity: 0.9;
 }
-
-/*____Блок почему выбирают нас___*/
 
 .aboutUsBlock{
     background-color: #121212;
@@ -263,6 +256,7 @@ img {vertical-align: middle;}
     height: 700px;
     color: white;
 }
+
 .aboutUsBlock p1{
     padding: 0px 0px 30px 0px;
     margin: 0px 0px 30px 0px;
@@ -290,6 +284,7 @@ img {vertical-align: middle;}
     margin: 10px;
     background: #2d2d2d;
 }
+
 .infoUsTableBlue{
     border-radius: 15px;
     display: flex;
@@ -301,6 +296,7 @@ img {vertical-align: middle;}
     height: 200px;
     background: #1BCCCC;
 }
+
 .infoUsTableBlack p3{
     font-size: 28px;
     font-weight: bold;
@@ -309,6 +305,7 @@ img {vertical-align: middle;}
     /* width: 500px; */
     text-align: left;
 }
+
 .infoUsTableBlue p3{
     font-size: 28px;
     font-weight: bold;
@@ -317,6 +314,7 @@ img {vertical-align: middle;}
     /* width: 500px; */
     text-align: left;
 }
+
 .infoUsTableBlack p4{
     font-size: 18px;
     /* width: 500px; */
@@ -324,6 +322,7 @@ img {vertical-align: middle;}
     color: #bebebe;
     padding: 0px 10px 0px 10px;
 }
+
 .infoUsTableBlue p4{
     font-size: 18px;
     /* width: 500px; */
@@ -331,6 +330,7 @@ img {vertical-align: middle;}
     color: white;
     padding: 0px 10px 0px 10px;
 }
+
 .infoUsTableIcon img{
     width: 90px;
     height: 90px;
@@ -340,8 +340,6 @@ img {vertical-align: middle;}
     background: #00FFFF;
     margin: 0px 0px 15px 0px;
 }
-
-/*______Блок информации о нас_______*/
 
 .infoContainer {
     width: 100%;
@@ -382,12 +380,12 @@ img {vertical-align: middle;}
     margin: 0px 200px 0px 0px;
 }
 
-
 .getInfoLinkTextCont img {
     width: 50px;
     height: 50px;
     margin: 0px 50px 0px 0px;
 }
+
 .getInfoLinkTextCont{
     margin: 0px 0px 20px 0px;
 }
@@ -403,16 +401,11 @@ img {vertical-align: middle;}
     border-bottom: 2px solid #00FFFF;
 }
 
-
 .getInfoLinkTextCont a{
     font-size: 18px;
     color: white;
 }
 
-
-
-
-/*_______Блок цен_____*/
 .pricingPlanBlock {
     position: relative;
     width: 100%;
@@ -495,6 +488,7 @@ img {vertical-align: middle;}
     height: 100%;
     text-align: left;
 }
+
 .priceGridBlockDopInfo p4{
     color: white;
     font-size: 24px;

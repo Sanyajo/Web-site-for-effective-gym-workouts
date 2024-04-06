@@ -15,66 +15,60 @@
     }
 </style>
 
-
 <body>
-<div class = "mainCont">
-    <#include "header.html">
+    <div class = "mainCont">
+        <#include "header.html">
 
-    <div class="slideshow-container">
-
-    <#list progrList as prlist>
-        <div class="mySlides fade">
-
-            <div class="text-block">
-                <div class="text-block-Inner">
-                    <h1>${prlist.getProgrName()}</h1>
-                    <p>${prlist.getProgrInfo()}</p>
-                    <form action="/traning-program/${prlist.getProgrName()}" method="post">
-                        <button type="submit">Подробнее</button>
-                    </form>
+        <div class="slideshow-container">
+            <#list progrList as prlist>
+                <div class="mySlides fade">
+                    <div class="text-block">
+                        <div class="text-block-Inner">
+                            <h1>${prlist.getProgrName()}</h1>
+                            <p>${prlist.getProgrInfo()}</p>
+                            <form action="/traning-program/${prlist.getProgrName()}" method="post">
+                                <button type="submit">Подробнее</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="pic-block">
+                        <img src="${prlist.getImageUrl()}" style="width:100%; height: 800px;margin: 0px 0px 0px 65px; object-fit: cover">
+                    </div>
                 </div>
-            </div>
-            <div class="pic-block">
-                <img src="${prlist.getImageUrl()}" style="width:100%; height: 800px;margin: 0px 0px 0px 65px; object-fit: cover">
-            </div>
-
+            </#list>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
         </div>
-    </#list>
-
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-
     </div>
-</div>
 
-<script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
 
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
         }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
         }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-    }
-</script>
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
 
 
 </body>
