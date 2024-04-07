@@ -21,6 +21,7 @@ public class Contrl {
     private final PriceService priceService;
     private final GymMachinesService gymMachinesService;
     private final JsonService jsonService;
+    private final NutrionProgramSevice nutrionProgramSevice;
 
     @GetMapping("/main")
     public String redirectMainPage(){
@@ -47,7 +48,6 @@ public class Contrl {
         return "traningprogram";
     }
 
-
     @PostMapping("/traning-program/{progrName}")
     public String traningProgramInDetail(@PathVariable String progrName, Model model) throws IOException {
         AllTraningProgram allTraningProgram = traningProgramService.getTrainByName(progrName);
@@ -58,9 +58,21 @@ public class Contrl {
     }
 
     @GetMapping("/gymmachines")
+    public String redirectGymMachines(){return "redirect:/gym-machines";}
+
+    @GetMapping("/gym-machines")
     public String gymMachines(Model model){
         model.addAttribute("gymmachinelist", gymMachinesService.getAllGymMachines());
         return "gymmachines";
+    }
+
+    @GetMapping("/nutrionprogram")
+    public String redirectNutrionProgram(){return "redirect:/nutrion-program";}
+
+    @GetMapping("/nutrion-program")
+    public String nutrionProgram(Model model){
+        model.addAttribute("nutrionprogramlist", nutrionProgramSevice.getAllNutrionProgram());
+        return "nutrionprogram";
     }
 
 }
