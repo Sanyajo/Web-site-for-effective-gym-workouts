@@ -26,4 +26,11 @@ public class JsonService {
         // Deserialize array of Program objects
         return mapper.readValue(file, Program[].class);
     }
+
+    public Program[] getAllProgramName(String jsonUrl) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        File file = new File(jsonUrl);
+        // Deserialize array of Program objects
+        return mapper.readValue(file, Program[].class);
+    }
 }

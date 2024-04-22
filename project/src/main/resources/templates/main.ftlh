@@ -10,13 +10,6 @@
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
 
-<style>
-    @font-face {
-        font-family: Sport;
-        src: url("static/fonts/SportsWorld.otf");
-    }
-</style>
-
 <body>
     <div class = "mainCont">
 

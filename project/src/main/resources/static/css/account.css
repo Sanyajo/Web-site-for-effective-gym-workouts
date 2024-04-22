@@ -1,0 +1,539 @@
+html, body {
+    background-color: #2a2a2a;
+    height: 100%;
+    margin: 0;
+    color: white;
+}
+
+* {
+    font-family: Sport;
+}
+
+.mainCont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.userLinks{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.userLinks p1{
+    font-size: 40px;
+    text-align: center;
+    margin: 30px 0px 90px 0px;
+}
+
+.userLinksBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.userLinksBlock button {
+    width: 280px;
+    height: 50px;
+    background: linear-gradient(274deg, rgba(1, 1, 1, 0.5914740896358543) 100%, rgba(0, 7, 255, 1) 100%);
+    border-radius: 15px;
+    border: 2px black;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin: 10px 10px 20px 10px;
+}
+.userLinksBlock button.underline,
+.userLinksBlock button:focus {
+    border: 2px solid #00FFFF;
+    background-color: #00FFFF;
+}
+.userLinksBlock button:hover{
+    border: 2px solid #00FFFF;
+    background-color: #00FFFF;
+}
+
+
+.userLogOut{
+    margin: 40px 0px 0px 0px;
+    padding: 40px 0px 0px 0px;
+    border-top: 2px solid #576564;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.userLogOut button {
+    width: 280px;
+    height: 50px;
+    background: linear-gradient(274deg, rgba(1, 1, 1, 0.5914740896358543) 100%, rgba(0, 7, 255, 1) 100%);
+    border-radius: 15px;
+    border: 2px black;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin: 10px;
+}
+.userLogOut button:hover {
+    border: 2px solid #00FFFF;
+    background-color: #00FFFF;
+}
+
+.userInfoCont{
+    width: 100%;
+    background-color: #576564;
+}
+
+.userBalance{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 24px;
+    margin: 20px 0px 30px 0px;
+}
+.userBalance p1{
+    margin: 0px 0px 0px 40px;
+}
+.userBalance p2{
+    margin: 0px 40px 0px 0px;
+}
+
+
+.userContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.userContainerGraphic{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.userStatistic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 170px;
+    height: 170px;
+    background: linear-gradient(274deg, rgba(1, 1, 1, 0.5) 100%, rgba(0, 7, 255, 1) 100%);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.userStatisticCont{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.userStatistic p1{
+    font-size: 40px;
+    margin: 40px 0px 30px 0px;
+}
+
+.userStatistic p2{
+    font-size: 18px;
+}
+
+.userInfo{
+    /* width: 600px; */
+    /* height: 550px; */
+    /* background: linear-gradient(274deg, rgba(1, 1, 1, 0.5914740896358543) 100%, rgba(0, 7, 255, 1) 100%); */
+    border-radius: 15px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.userInfo img{
+    width: 300px;
+    object-fit: cover;
+    height: 300px;
+    border-radius: 40px;
+    margin: 10px 90px 10px 40px;
+}
+
+.userInfoInnerBlock{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    margin: 0px 50px 0px 0px;
+}
+
+.userInfoInnerBlock p1{
+    font-size: 20px;
+    margin: 0px 0px 20px 0px;
+}
+
+.userAnimateCont{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 70px 0px 0px 0px;
+}
+
+.userInfoInnerBlockButtonCont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.userInfoInnerBlockButton{
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(274deg, rgba(1, 1, 1, 0.5914740896358543) 100%, rgba(0, 7, 255, 1) 100%);
+    border-radius: 15px;
+    border: 2px black;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    margin: 10px;
+}
+.userInfoInnerBlockButton:hover{
+    border: 2px solid #00FFFF;
+    background-color: #00FFFF;
+}
+
+.diagram{
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(274deg, rgba(1, 1, 1, 0.5) 100%, rgba(0, 7, 255, 1) 100%);
+}
+
+
+/**/
+@property --p{
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+
+.pie {
+    --p:20;
+    --b:22px;
+    --c:darkred;
+    --w:150px;
+
+    width:250px;
+    aspect-ratio:1;
+    position:relative;
+    display:inline-grid;
+    margin:5px;
+    place-content:center;
+    font-size:25px;
+    font-weight:bold;
+    font-family:sans-serif;
+}
+.pie:before,
+.pie:after {
+    content:"";
+    position:absolute;
+    border-radius:50%;
+}
+.pie:before {
+    inset:0;
+    background:
+            radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+            conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+    mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+}
+.pie:after {
+    inset:calc(50% - var(--b)/2);
+    background:var(--c);
+    transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+}
+.animate {
+    animation:p 1s .5s both;
+}
+.no-round:before {
+    background-size:0 0,auto;
+}
+.no-round:after {
+    content:none;
+}
+@keyframes p {
+    from{--p:0}
+}
+
+/*__________Программы_________*/
+
+.programContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.programSelect{
+    width: 550px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background: linear-gradient(274deg, rgba(1, 1, 1, 0.5) 100%, rgba(0, 7, 255, 1) 100%);
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.programSelect select{
+    width: 210px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+.programInfo{
+    width: 600px;
+    display: flex;
+    /*justify-content: center;*/
+    flex-direction: column;
+    align-items: center;
+}
+
+.secandhistorycont{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.layer {
+    border-radius: 15px;
+    margin: 0px 10px 0px 0px;
+    overflow: scroll;
+    width: 100%;
+    overflow-x: hidden;
+    height: 300px;
+    padding: 5px;
+    border: solid 1px black;
+    background: linear-gradient(274deg, rgba(1, 1, 1, 0.5) 100%, rgba(0, 7, 255, 1) 100%);
+}
+
+.layer h2{
+    text-align: center;
+    font-size: 40px;
+    margin: 40px 0px 30px 0px;
+}
+.layer pre{
+    font-size: 18px;
+}
+
+.progrInfoTextConteiner{
+    text-align: center;
+    border-radius: 15px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    width: 510px;
+    height: 400px;
+    margin: 10px 20px 10px 20px;
+    background: linear-gradient(274deg, rgba(1, 1, 1, 0.5) 100%, rgba(0, 7, 255, 1) 100%);
+}
+
+.progrInfoTextConteiner p2{
+    font-size: 30px;
+    margin: 0px 0px 10px 0px;
+}
+
+.progrInfoTextConteiner p3{
+    margin: 0px 0px 5px 0px;
+    font-size: 18px;
+}
+
+.progrInfoTextConteiner p4{
+    margin: 0px 0px 10px 0px;
+    font-size: 18px;
+}
+
+#sekundomers {
+    width: 400px;
+    background: linear-gradient(274deg, rgba(1, 1, 1, 0.5) 100%, rgba(0, 7, 255, 1) 100%);
+    height: 86px;
+    border-radius: 15px;
+    padding: 40px 50px 110px;
+    text-align: center;
+    font-size: 28px;
+    margin: 20px 0px 0px 0px;
+}
+
+#sekundomers span {
+    background: #2d2d2d;
+    color: #ffeffb;
+    padding: 10px;
+    width: 60px;
+    border-radius: 3px;
+    margin: 5px;
+    display: inline-block;
+}
+.time{
+
+    margin-left: -25px;
+}
+#sekundomers span{
+    margin-left: 20px;
+}
+/*#sekundomers button:first-of-type {*/
+/*    margin-top: 15px;*/
+/*}*/
+.vpered, .sanovka, .sbrosit, .endTraning  {
+    font-size: 22px;
+    -webkit-appearance: none;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: 110px;
+    height: 50px;
+    transition: .3s;
+    margin: 10px 10px 0px 0px;
+}
+.endTraning{
+    width: 360px;
+    background-color: blue;
+}
+.vpered{
+    background-color: green;
+}
+
+.sanovka{
+    background-color: red;
+}
+
+.sbrosit{
+    background-color: black;
+}
+#sekundomers button:hover {
+    background: #2763cf;
+    color: #f1ecec;
+    cursor: pointer;
+}
+
+
+
+.nutrionProgramContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nutrionProgramInfo{
+    width: 600px;
+    display: flex;
+    /*justify-content: center;*/
+    flex-direction: column;
+    align-items: center;
+}
+
+.nutrionProgramSelect{
+    width: 550px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    background: linear-gradient(274deg, rgba(1, 1, 1, 0.5) 100%, rgba(0, 7, 255, 1) 100%);
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.nutrionProgramSelect select {
+    width: 210px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+.nutrionProgranInfo{
+    width: 600px;
+    display: flex;
+    /*justify-content: center;*/
+    flex-direction: column;
+    align-items: center;
+}
+
+.nutrionProgramInfoConteiner{
+    text-align: center;
+    border-radius: 15px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    width: 510px;
+    height: 400px;
+    margin: 10px 20px 10px 20px;
+    background: linear-gradient(274deg, rgba(1, 1, 1, 0.5) 100%, rgba(0, 7, 255, 1) 100%);
+}
+
+.nutrionProgramInfoConteiner p1{
+    font-size: 30px;
+    margin: 0px 0px 10px 0px;
+}
+
+.nutrionProgramInfoConteiner p2{
+    margin: 0px 0px 10px 0px;
+    font-size: 18px;
+}
+
+/*Диалоговое окно*/
+.popUp{
+    border-color: black;
+    width: 400px;
+    height: 150px;
+    background-color: #2f2f2f;
+}
+.popUpMarkUp{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.popUpMarkUp button{
+    width: 250px;
+    height: 40px;
+    background: linear-gradient(274deg, rgba(1, 1, 1, 0.5914740896358543) 100%, rgba(0, 7, 255, 1) 100%);
+    border-radius: 15px;
+    border: 2px black;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    margin: 10px;
+}
+
+.popUpMarkUp .inputForm{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 5px 0px 15px 0px;
+    border-style: solid;
+    border-color: white;
+    outline: none;
+}
+
+label{
+    text-align: center;
+    /* width: 308px; */
+    color: white;
+}

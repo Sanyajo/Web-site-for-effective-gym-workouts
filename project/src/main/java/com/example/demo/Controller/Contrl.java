@@ -28,6 +28,11 @@ public class Contrl {
         return "redirect:/SportStorm";
     }
 
+    @GetMapping("/")
+    public String MainPage(){
+        return "redirect:/SportStorm";
+    }
+
     @GetMapping("/SportStorm")
     public String mainPage(Model model){
         model.addAttribute("listSliderHead", sliderService.getSliderByType("mainWindHead"));
@@ -48,13 +53,14 @@ public class Contrl {
         return "traningprogram";
     }
 
-    @PostMapping("/traning-program/{progrName}")
-    public String traningProgramInDetail(@PathVariable String progrName, Model model) throws IOException {
+
+    @PostMapping("/traning-programm/{progrName}")
+    public String traningDetail(@PathVariable String progrName, Model model) throws IOException {
         AllTraningProgram allTraningProgram = traningProgramService.getTrainByName(progrName);
-        model.addAttribute("trainprogr", allTraningProgram);
+        model.addAttribute("traningprogr", allTraningProgram);
         model.addAttribute("gymMachinesList",gymMachinesService.getGymMachines(allTraningProgram.getTraningType()));
         model.addAttribute("progrList", jsonService.getProgram(progrName));
-        return "traningprogramdetail";
+        return "traningDetail";
     }
 
     @GetMapping("/gymmachines")

@@ -8,13 +8,6 @@
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
 
-<style>
-    @font-face {
-        font-family: Sport;
-        src: url("/static/fonts/SportsWorld.otf");
-    }
-</style>
-
 <body>
     <div class = "mainCont">
         <#include "header.html">
@@ -26,7 +19,8 @@
                         <div class="text-block-Inner">
                             <h1>${prlist.getProgrName()}</h1>
                             <p>${prlist.getProgrInfo()}</p>
-                            <form action="/traning-program/${prlist.getProgrName()}" method="post">
+                            <form action="/traning-programm/${prlist.getProgrName()}" method="post">
+                                <input type="hidden" name="_csrf" value="${_csrf.token}">
                                 <button type="submit">Подробнее</button>
                             </form>
                         </div>
