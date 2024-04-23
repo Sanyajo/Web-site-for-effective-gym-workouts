@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Личный кабинет</title>
     <link rel="stylesheet" href="/css/account.css">
     <script src="/scripts/user.js" defer></script>
 </head>

@@ -6,7 +6,6 @@ import com.example.demo.Models.AllTraningProgram;
 import com.example.demo.Models.NutrionProgram;
 import com.example.demo.Repository.UserRepo;
 import com.example.demo.Service.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import com.example.demo.Models.User;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.security.Principal;
 import java.util.*;
@@ -67,41 +65,42 @@ public class UserController {
     @GetMapping("/account")
     public String userAccaunt(Principal principal, Model model) throws IOException {
         User user = userService.getUserByPrincipal(principal);
-        model.addAttribute("user", user);
-//
-        List<AllTraningProgram> allTraningPrograms = traningProgramService.getAllTraningProgram();
-        List<String> programName = new ArrayList<>();
-        List<Program> programList = new ArrayList<>();
-        for(var i: allTraningPrograms){
-            Program[] programs = jsonService.getAllProgramName(i.getProgrJsonUrl());
-            for(var j: programs){
-                programList.add(j);
-                programName.add(j.getProgrName());
+            model.addAttribute("user", user);
+
+            List<AllTraningProgram> allTraningPrograms = traningProgramService.getAllTraningProgram();
+            List<String> programName = new ArrayList<>();
+            List<Program> programList = new ArrayList<>();
+            for(var i: allTraningPrograms){
+                Program[] programs = jsonService.getAllProgramName(i.getProgrJsonUrl());
+                for(var j: programs){
+                    programList.add(j);
+                    programName.add(j.getProgrName());
+                }
             }
-        }
-        model.addAttribute("progrListName", programName);
-        model.addAttribute("allProgram", programList);
+            model.addAttribute("progrListName", programName);
+            model.addAttribute("allProgram", programList);
 
 
-        List<NutrionProgram> nutrionProgramsList = nutrionProgramSevice.getAllNutrionProgram();
+            List<NutrionProgram> nutrionProgramsList = nutrionProgramSevice.getAllNutrionProgram();
 
-        List<Integer> nutrionProgramName = new ArrayList<>();
-        for(var i : nutrionProgramsList){
-            nutrionProgramName.add(i.getId());
-        }
+            List<Integer> nutrionProgramName = new ArrayList<>();
+            for(var i : nutrionProgramsList){
+                nutrionProgramName.add(i.getId());
+            }
 
 
-        model.addAttribute("nutrionProgramNameList",nutrionProgramName);
-        model.addAttribute("nutrionprogramlist",nutrionProgramsList);
+            model.addAttribute("nutrionProgramNameList",nutrionProgramName);
+            model.addAttribute("nutrionprogramlist",nutrionProgramsList);
 
-        model.addAttribute("lastprogramlist", user.getLastProgramArray());
+            model.addAttribute("lastprogramlist", user.getLastProgramArray());
 
-        model.addAttribute("kollTraining",userService.getCountTraining(user));
-        model.addAttribute("countRepeat",userService.getCountRepeat(user)[0]);
-        model.addAttribute("countApproaches",userService.getCountRepeat(user)[1]);
+            model.addAttribute("kollTraining",userService.getCountTraining(user));
+            model.addAttribute("countRepeat",userService.getCountRepeat(user)[0]);
+            model.addAttribute("countApproaches",userService.getCountRepeat(user)[1]);
+            return "user";
 
-        return "user";
     }
+
     @PostMapping("/endTraining")
     public String endTraining(Principal principal, @RequestParam("selectedProgram") String selectedProgram) {
         // Вывод информации о Principal в консоль
