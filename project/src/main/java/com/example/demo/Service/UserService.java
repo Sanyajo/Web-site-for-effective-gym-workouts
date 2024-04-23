@@ -17,13 +17,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.Principal;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.Future;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -133,7 +131,6 @@ public class UserService {
     }
 
     public void changeUserAvatar(User user, MultipartFile images) throws IOException {
-// В вашем методе
         if (images != null && user != null) {
             Future<Void> moveResult = fileMoveService.moveFile(user, images, "/Users/sangao/Documents/Github/Web-site-for-effective-gym-workouts/project/src/main/resources/static/usersAvatar");
 
@@ -143,6 +140,35 @@ public class UserService {
     }
 
 
+    public void banUser(Long id) {
+        User user = userRepository.findById(id).orElse(null);
+        if (user != null) {
+            if (user.isActive()) {
+                user.setActive(false);
+                log.info("Ban user with id = {}; email: {}", user.getId(), user.getEmail());
+            } else {
+                user.setActive(true);
+                log.info("Unban user with id = {}; email: {}", user.getId(), user.getEmail());
+            }
+        }
+        userRepository.save(user);
+    }
 
+    public void changeUserRoles(User user, Map<String, String> form) {
+        Set<String> roles = Arrays.stream(Role.values())
+                .map(Role::name)
+                .collect(Collectors.toSet());
+        user.getRoles().clear();
+        for (String key : form.keySet()) {
+            if (roles.contains(key)) {
+                user.getRoles().add(Role.valueOf(key));
+            }
+        }
+        userRepository.save(user);
+    }
+
+    public List<User> list() {
+        return userRepository.findAll();
+    }
 
 }
