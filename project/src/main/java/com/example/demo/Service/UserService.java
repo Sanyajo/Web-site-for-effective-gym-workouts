@@ -42,6 +42,7 @@ public class UserService {
         }
         user.setActive(true);
         user.getRoles().add(Role.ROLE_USER);
+        user.setUserBalance(0.0);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         log.info("Пользователь с почтой " + userEmail + " создан !");
         userRepository.save(user);
@@ -167,8 +168,30 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public void changeUserBalance(User user, Double newbalance, String action){
+        switch (action){
+            case "+":{
+                user.setUserBalance(user.getUserBalance() + newbalance);
+                break;
+            }
+            case "-":{
+                user.setUserBalance(user.getUserBalance() - newbalance);
+                break;
+            }
+            default:{
+                break;
+            }
+        }
+        userRepository.save(user);
+    }
+
     public List<User> list() {
         return userRepository.findAll();
+    }
+
+    public void setUserPasswordToken(User user, String token){
+        user.setPassword(passwordEncoder.encode(token));
+        userRepository.save(user);
     }
 
 }

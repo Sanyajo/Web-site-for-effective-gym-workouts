@@ -36,7 +36,7 @@
 
             <div class="userBalance">
                 <p1>Личный кабинет:     <b>${user.getName()}</b></p1>
-                <p2>Баланс:    <b>$ 00.00</b></p2>
+                <p2>Баланс:    <b>$ ${user.getUserBalance()}</b></p2>
             </div>
 
             <div class="userContainer">

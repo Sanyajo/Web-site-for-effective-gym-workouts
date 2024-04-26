@@ -9,6 +9,7 @@ import com.example.demo.Service.*;
 import lombok.RequiredArgsConstructor;
 import com.example.demo.Models.User;
 import lombok.extern.slf4j.Slf4j;
+import net.bytebuddy.implementation.bytecode.assign.TypeCasting;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +33,7 @@ public class UserController {
     private final JsonService jsonService;
     private final UserRepo userRepository;
     private final NutrionProgramSevice nutrionProgramSevice;
+    private final MailSender mailSender;
 
     @GetMapping("/login")
     public String login(Model model){
@@ -51,7 +53,7 @@ public class UserController {
         model.addAttribute("backWallp",sliderService.getSliderByType("mainWindHead").get(0).getImageUrl());
         if (!userService.createUser(user)) {
             model.addAttribute("errorMessage", "Пользователь с email: " + user.getEmail() + " уже существует");
-            log.info("Пользователь с email: " + user.getEmail() + " уже существует");
+            log.info("Пользователь с ником: " + user.getName() + " уже существует");
             return "registration";
         }
         return "redirect:/login";
@@ -145,6 +147,23 @@ public class UserController {
         User user = userService.getUserByPrincipal(principal);
         userService.changeUserAvatar(user, urlImages);
         return "redirect:/account";
+    }
+
+    @GetMapping("/resetpassword")
+    public String reserPasswod(Model model){
+        model.addAttribute("backWallp",sliderService.getSliderByType("mainWindHead").get(0).getImageUrl());
+        return "resetpassword";
+    }
+
+    @PostMapping    ("/emailconfirm")
+    public String emailconfirm(@RequestParam("userEmail") String userEmail, Principal principal){
+        User user = userRepository.findByEmail(userEmail);
+        if(user != null){
+            String token = UUID.randomUUID().toString().toUpperCase();
+            mailSender.send(userEmail,"Попытка изменить пароль", "Новый пароль " + token+"\nСсылка для входа: http://localhost:8084/login/");
+            userService.setUserPasswordToken(user, token);
+        }
+        return "redirect:/login";
     }
 
 }

@@ -46,6 +46,10 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles = new HashSet<>();
 
+    @CollectionTable(name="user_balance",
+            joinColumns = @JoinColumn(name="user_id"))
+    private Double userBalance;
+
     private LocalDateTime dateOfCreated;
 
     @Column(name="lastProgramArray", updatable = true)

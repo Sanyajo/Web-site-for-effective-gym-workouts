@@ -34,9 +34,28 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-    @PostMapping("/admin/user/edit")
-    public String userEdit(@RequestParam("userId") User user, @RequestParam Map<String, String> form) {
+    @GetMapping("/admin/user/editrole/{user}")
+    public String userRoleEdit(@PathVariable("user") User user, Model model) {
+        model.addAttribute("user", user);
+        model.addAttribute("roles", Role.values());
+        return "usereditrole";
+    }
+
+    @PostMapping("/admin/user/editrole")
+    public String userRoleEdit(@RequestParam("userId") User user, @RequestParam Map<String, String> form) {
         userService.changeUserRoles(user, form);
+        return "redirect:/admin";
+    }
+
+    @GetMapping("/admin/user/editbalance/{user}")
+    public String userBalanceEdit(@PathVariable("user") User user, Model model) {
+        model.addAttribute("user", user);
+        return "usereditbalance";
+    }
+
+    @PostMapping("/admin/user/editbalance")
+    public String userBalanceEdit(@RequestParam("userId") User user, @RequestParam("userBalance") Double userBalance, @RequestParam("balanceAction") String action) {
+        userService.changeUserBalance(user, userBalance, action);
         return "redirect:/admin";
     }
 }

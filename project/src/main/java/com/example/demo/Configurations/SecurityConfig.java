@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/", "/registration", "/main", "/SportStorm",
                         "/traningProgram","/traning-program","/traning-programm/**",
-                        "/gymmachines","/gym-machines","/nutrionprogram","/nutrion-program", "/endTraining","/renameuser","/changeavatar").permitAll() // Добавьте сюда другие разрешенные URL
+                        "/gymmachines","/gym-machines","/nutrionprogram","/nutrion-program", "/endTraining","/renameuser","/changeavatar","/resetpassword","/emailconfirm").permitAll() // Добавьте сюда другие разрешенные URL
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
