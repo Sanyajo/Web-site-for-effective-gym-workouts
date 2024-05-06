@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пополнение баланса</title>
+    <link rel="stylesheet" href="/css/cryptopayment.css">
+</head>
+<body>
+<div class="mainContainer">
+
+    <div class="selectButton">
+        <button id="tetherButton">Tether</button>
+        <button id="bitcoinButton">Bitcoin</button>
+    </div>
+
+    <div class="tetherBlock">
+        <h1>Tether USD(ERC 20)</h1>
+        <img src="/images/cryptopayment/usdt.png" alt="/images/cryptopayment/usdt.png" class="imgAddress">
+        <input type="text" value="0x185C9EdBDA7F4f127e39a6576266406e0a43e51A" id="tetherInput" readonly class="inputAddressText">
+        <button onclick="copyTetherAddress()">Копировать текст</button>
+        <p1>После отправки криптовалюты, отправьте номер транзакции или чек транзакции на почту sac5acb@yandex.by С ПОЧТЫ на которую хотите положить деньги, иначе денежные средства пропадут ! (Зачисление производится в течение 12 часов с момента подтерждения транзакции)</p1>
+    </div>
+
+    <div class="bitcoinBlock">
+        <h1>Bitcoin (BTC)</h1>
+        <img src="/images/cryptopayment/bitcoin.png" alt="/images/cryptopayment/bitcoin.png" class="imgAddress">
+        <input type="text" value="bc1qs4fff8zw8efw5fljuvhfdaz08yuupa9xmccfph" id="bitcoinInput" readonly class="inputAddressText">
+        <button onclick="copyBitcoinAddress()">Копировать текст</button>
+        <p1>После отправки криптовалюты, отправьте номер транзакции или чек транзакции на почту sac5acb@yandex.by С ПОЧТЫ на которую хотите положить деньги, иначе денежные средства пропадут ! (Зачисление производится в течение 12 часов с момента подтерждения транзакции)</p1>
+    </div>
+
+    <div class="mainPageBlock">
+        <form action="/main" target="_self">
+            <button class="mainButton">Главная</button>
+        </form>
+    </div>
+
+
+
+</div>
+
+<script>
+    function copyTetherAddress() {
+        /* Находим текстовое поле */
+        var copyText = document.getElementById("tetherInput");
+
+        /* Выбираем текстовое поле */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* Для мобильных устройств */
+
+        /* Копируем текст из текстового поля */
+        navigator.clipboard.writeText(copyText.value);
+
+        /* Выводим скопированный текст в диалоговом окне */
+        alert("Скопированный текст: " + copyText.value);
+    }
+
+    function copyBitcoinAddress() {
+        /* Находим текстовое поле */
+        var copyText = document.getElementById("bitcoinInput");
+
+        /* Выбираем текстовое поле */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* Для мобильных устройств */
+
+        /* Копируем текст из текстового поля */
+        navigator.clipboard.writeText(copyText.value);
+
+        /* Выводим скопированный текст в диалоговом окне */
+        alert("Скопированный текст: " + copyText.value);
+    }
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tetherButton = document.getElementById("tetherButton");
+        const tetherBlock = document.querySelector(".tetherBlock");
+
+        const bitcoinButton = document.getElementById("bitcoinButton");
+        const bitcoinBlock = document.querySelector(".bitcoinBlock");
+
+
+        tetherBlock.style.display = "flex";
+        bitcoinBlock.style.display = "none";
+
+        tetherButton.addEventListener("click", function () {
+            tetherBlock.style.display = "flex";
+            bitcoinBlock.style.display = "none";
+        });
+
+        bitcoinButton.addEventListener("click", function () {
+            tetherBlock.style.display = "none";
+            bitcoinBlock.style.display = "flex";
+        });
+
+    });
+
+</script>
+
+
+</body>
+</html>

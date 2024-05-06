@@ -498,3 +498,146 @@ img {vertical-align: middle;}
     color: #00FFFF;
     margin: 0px 0px 20px 20px;
 }
+
+
+.trainerConteiner{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 25px 0px 0px 0px;
+}
+
+.trainerConteiner p1{
+    font-size: 45px;
+    font-weight: bold;
+    width: 70%;
+    /* text-align: center; */
+    color: white;
+    margin: 0px 0px 40px 0px;
+    padding: 0px 0px 30px 0px;
+    border-bottom: 2px solid #00FFFF;
+}
+
+.trainerConteinerImg{
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+}
+
+.trainerBlock{
+    display: flex;
+    justify-content: center;
+    /* align-items: baseline; */
+    flex-direction: column;
+    width: 700px;
+    margin: 0px 50px 0px 0px;
+}
+
+.trainerBlockImg {
+    position: relative; /* Добавьте позиционирование */
+}
+
+.trainerBlockImgText{
+    justify-content: center;
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+}
+
+.trainerBlockImgText h1{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #00FFFF;
+    color: black;
+    background-color: #00FFFF;
+    width: 250px;
+}
+
+.trainerBlockImg img {
+    margin: 10px;
+    width: 350px;
+    height: 350px;
+    margin: 10px;; /* Сделайте изображение занимающим всю доступную ширину */
+    height: auto; /* Поддерживайте соотношение сторон */
+    z-index: 0; /* Установите z-index, чтобы изображение было за заголовком */
+}
+
+.trainerBlockMainImg{
+    position: relative;
+}
+.trainerBlockMainImg img{
+    width: 485px;
+    height: 485px;
+}
+
+.trainerBlockImgText1{
+    justify-content: center;
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.trainerBlockImgText1 h1{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #00FFFF;
+    color: black;
+    background-color: #00FFFF;
+    width: 300px;
+    height: 40px;
+}
+
+.innovationcoach{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.innovationcoach h1 {
+    font-weight: bold;
+    font-size: 36px;
+    margin: 40px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
+    text-align: center;
+    border-bottom: 2px solid #00FFFF;
+    color: white;
+    width: 500px;
+}
+
+.innovationcoach p1{
+    font-weight: normal;
+    font-size: 24px;
+    color: white;
+    margin: 20px 0px 40px 0px;
+}
+
+.innovationcoach button{
+    color: black;
+    height: 40px;
+    border-radius: 15px;
+    /* margin: 0px 20px 0px 0px; */
+    width: 150px;
+    border: 2px solid #00FFFF;
+    background-color: #00FFFF;
+    cursor: pointer;
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+.innovationcoach button:hover{
+    border-color: rgba(0, 255, 255, 0.49);
+    background-color: rgba(0, 255, 255, 0.49);
+    color: white;
+    opacity: 0.9;
+}

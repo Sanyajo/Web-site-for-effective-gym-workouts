@@ -47,7 +47,7 @@ public class User implements UserDetails {
     private Set<Role> roles = new HashSet<>();
 
     @CollectionTable(name="user_balance",
-            joinColumns = @JoinColumn(name="user_id"))
+            joinColumns = @JoinColumn(name="user_balance"))
     private Double userBalance;
 
     private LocalDateTime dateOfCreated;

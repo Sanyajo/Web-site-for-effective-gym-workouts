@@ -25,6 +25,10 @@
     margin: 0px 0px 15px 0px;
 }
 
+a{
+    margin: 0px 0px 10px 0px;
+}
+
 .loginButton{
     width: 200px;
     height: 30px;

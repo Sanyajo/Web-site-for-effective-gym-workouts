@@ -1,0 +1,33 @@
+body{
+    height: 100%;
+    background-color: darkgray;
+}
+
+.usertable, .trainertable{
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.adminname{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin:30px;
+    flex-direction: column;
+}
+
+.adminname p1{
+    font-weight: bold;
+    font-size: 36px;
+    margin: 0px 0px 20px 0px;
+}
+
+.usertable tbody, .trainertable tbody{
+    background-color: white;
+}
+
+.usertable th, .trainertable th{
+    margin: 0px 10px 0px 0px;
+}

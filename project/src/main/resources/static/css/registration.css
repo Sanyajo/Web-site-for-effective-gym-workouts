@@ -16,7 +16,7 @@
     text-align: center;
     border-radius: 15px;
     width: 425px;
-    height: 400px;
+    height: 450px;
 }
 
 .mainContainerInner p1{
@@ -45,7 +45,7 @@ form .inputForm{
     width: 300px;
     height: 40px;
     border-radius: 10px;
-    margin: 0px 0px 20px 0px;
+    margin: 10px 0px 20px 0px;
     border-style: solid;
     border-color: white;
 }
@@ -63,4 +63,12 @@ form input{
 
 input{
     outline:none;
+}
+
+.labelBlock{
+    width: 200px;
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    flex-direction: column;
 }

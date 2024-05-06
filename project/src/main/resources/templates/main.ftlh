@@ -128,6 +128,45 @@
             </div>
         </div>
 
+        <div class="trainerConteiner">
+            <div class="trainerConteiner">
+                <div class="trainerBlock">
+                    <p1>Наша команда</p1>
+                    <div class="trainerConteinerImg">
+                        <div class="trainerBlockImg">
+                            <img src="/images/mainWind/trainer1.png" alt="/images/mainWind/defaultAvatar.jpg">
+                            <div class="trainerBlockImgText">
+                                <h1>Дизайнер</h1>
+                            </div>
+                        </div>
+                        <div class="trainerBlockImg">
+                            <img src="/images/mainWind/trainer2.png" alt="/images/mainWind/defaultAvatar.jpg">
+                            <div class="trainerBlockImgText">
+                                <h1>Фитнес-тренер</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="trainerBlockMainImg">
+                    <img src="/images/mainWind/trainer3.png" alt="/images/mainWind/defaultAvatar.jpg">
+                    <div class="trainerBlockImgText1">
+                        <h1>Разработчик</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="innovationcoach">
+            <h1>Хотите к нам в команду ?</h1>
+            <p1>После нажатия на кнопку заполните анкету и наши менеджеры обязательно свяжутся с вами по почте.</p1>
+            <form action="/trainerpush" method="get">
+                <#--                <input type="hidden" name="_csrf" value="${_csrf.token}"/>-->
+                <button type="submit" style="text-align: center;">
+                    Стать тренером
+                </button>
+            </form>
+        </div>
+
         <#include "footer.html">
 
     </div>
@@ -159,6 +198,8 @@
             slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " active";
         }
+
+
     </script>
 
 </body>

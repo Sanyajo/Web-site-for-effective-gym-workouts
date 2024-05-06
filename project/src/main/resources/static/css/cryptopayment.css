@@ -1,0 +1,118 @@
+body{
+    height: 100%;
+    background-color: #151515;
+    color: white;
+}
+
+.mainContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tetherBlock, .bitcoinBlock{
+    margin: 50px 0px 0px 0px;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tetherBlock h1, .bitcoinBlock h1{
+    font-weight: bold;
+    font-size: 36px;
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+    border-bottom: 2px solid #00FFFF;
+    width: 500px;
+}
+
+.tetherBlock p1, .bitcoinBlock p1{
+    width: 700px;
+    font-size: 18px;
+    margin: 20px 0px 20px 0px;
+    /*padding: 0px 0px 20px 0px;*/
+    /*text-align: center;*/
+    /*border-bottom: 2px solid #00FFFF;*/
+    /*width: 500px;*/
+}
+
+.selectButton {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px 0px 10px 0px;
+}
+
+.selectButton button {
+    margin: 0px 40px 0px 0px;
+    /* width: 150px; */
+    color:white;
+    height: 50px;
+    line-height: 38px;
+    font-size: 24px;
+    /* font-weight: 600; */
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+
+.selectButton button.underline,
+.selectButton button:focus {
+    border-bottom: 2px solid #00FFFF;
+}
+
+.inputAddressText{
+    text-align: center;
+    width: 350px;
+    margin: 0px 0px 10px 0px;
+}
+
+.imgAddress{
+    margin: 10px;
+}
+
+.tetherBlock button, .bitcoinBlock button{
+    color: black;
+    height: 40px;
+    border-radius: 15px;
+    /* margin: 0px 20px 0px 0px; */
+    width: 200px;
+    border: 2px solid #00FFFF;
+    background-color: #00FFFF;
+    cursor: pointer;
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+.tetherBlock button:hover, .bitcoinBlock button:hover{
+    border-color: rgba(0, 255, 255, 0.49);
+    background-color: rgba(0, 255, 255, 0.49);
+    color: white;
+    opacity: 0.9;
+}
+
+.mainButton{
+    color: black;
+    height: 40px;
+    border-radius: 15px;
+    /* margin: 0px 20px 0px 0px; */
+    width: 200px;
+    border: 2px solid #00FFFF;
+    background-color: #00FFFF;
+    cursor: pointer;
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+.mainButton:hover{
+    border-color: rgba(0, 255, 255, 0.49);
+    background-color: rgba(0, 255, 255, 0.49);
+    color: white;
+    opacity: 0.9;
+}

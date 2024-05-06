@@ -22,6 +22,14 @@
                 <button id="userInfoButton">Информация</button>
                 <button id="programButton">Программы</button>
                 <button id="nutrionProgramButton">Питание</button>
+                <#if user.getRoles()[0] == "ROLE_ADMIN">
+                    <form action="/admin" method="get">
+                        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                        <button type="submit" style="text-align: center;margin:0px 0px 20px 0px" class="logoutButton">
+                            Панель админа
+                        </button>
+                    </form>
+                </#if>
             </div>
             <div class="userLogOut">
                 <form action="/logout" method="post">
@@ -36,7 +44,12 @@
 
             <div class="userBalance">
                 <p1>Личный кабинет:     <b>${user.getName()}</b></p1>
-                <p2>Баланс:    <b>$ ${user.getUserBalance()}</b></p2>
+                <p2>Баланс:    <form action="/cryptoTransaction" method="get">
+                                            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                            <button type="submit" style="text-align: center;">
+                                <b>${user.getUserBalance()} $</b>
+                            </button>
+                        </form></p2>
             </div>
 
             <div class="userContainer">
@@ -49,6 +62,21 @@
                     <div class="userInfoInnerBlock">
                         <p1>Имя пользователя: <b>${user.getName()}</b></p1>
                         <p1>Почта: <b>${user.getEmail()}</b></p1>
+                        <#list user.getRoles() as userRole>
+                            <#switch userRole>
+                                <#case "ROLE_ADMIN">
+                                    <p1>Ваш статус: Администратор</p1>
+                                    <#break>
+                                <#case "ROLE_TRAINER">
+                                    <p1>Ваш статус: Тренер</p1>
+                                    <#break>
+                                <#case "ROLE_USER">
+                                    <p1>Ваш статус: Пользователь</p1>
+                                    <#break>
+                                <#default>
+                                <p1>Ваш статус: Пользователь</p1>
+                            </#switch>
+                        </#list>
                         <div class="userInfoInnerBlockButtonCont">
                             <button onclick="popUpUserName.showModal()" class="userInfoInnerBlockButton">Изменить имя</button>
                             <button onclick="popUpUserPassword.showModal()" class="userInfoInnerBlockButton">Изменить пароль</button>

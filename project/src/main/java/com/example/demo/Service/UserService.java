@@ -34,6 +34,10 @@ public class UserService {
     @Autowired
     private FileMoveService fileMoveService;
 
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
+    }
+
     public boolean createUser(User user){
         String userEmail = user.getEmail();
         String userName = user.getUsername();
@@ -193,5 +197,11 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(token));
         userRepository.save(user);
     }
+
+   public String getUserAvatar(String email){
+        User user = userRepository.findByEmail(email);
+        return user.getAvatar();
+    }
+
 
 }

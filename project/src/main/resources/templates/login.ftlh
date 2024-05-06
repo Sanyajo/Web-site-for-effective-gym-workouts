@@ -33,7 +33,7 @@
             <input type="submit" value="Вход" class="loginButton"/>
         </form>
         <a href="/registration">Зарегистрироваться</a>
-        <a href="/resetpassword">Забыли пароль</a>
+        <a href="/resetpassword">Забыли пароль ?</a>
     </div>
 </div>
 

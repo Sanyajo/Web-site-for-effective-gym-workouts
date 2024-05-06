@@ -24,7 +24,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/", "/registration", "/main", "/SportStorm",
                         "/traningProgram","/traning-program","/traning-programm/**",
-                        "/gymmachines","/gym-machines","/nutrionprogram","/nutrion-program", "/endTraining","/renameuser","/changeavatar","/resetpassword","/emailconfirm").permitAll() // Добавьте сюда другие разрешенные URL
+                        "/gymmachines","/alltrainer","/all-trainer","/gym-machines",
+                        "/nutrionprogram","/nutrion-program", "/endTraining","/renameuser",
+                        "/changeavatar","/resetpassword","/emailconfirm").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -42,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    public void configure(WebSecurity web) throws Exception {
+    public void configure(WebSecurity web){
         web.ignoring().antMatchers("/css/**", "/js/**", "/images/**","/jsonDir/**","/scripts/**","/usersAvatar/**");
     }
 

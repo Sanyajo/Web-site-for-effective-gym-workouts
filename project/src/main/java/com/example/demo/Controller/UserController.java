@@ -4,6 +4,7 @@ package com.example.demo.Controller;
 import com.example.demo.JsonModel.Program;
 import com.example.demo.Models.AllTraningProgram;
 import com.example.demo.Models.NutrionProgram;
+import com.example.demo.Models.enums.Role;
 import com.example.demo.Repository.UserRepo;
 import com.example.demo.Service.*;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +35,8 @@ public class UserController {
     private final UserRepo userRepository;
     private final NutrionProgramSevice nutrionProgramSevice;
     private final MailSender mailSender;
+    private final TrainerUsersService trainerUsersService;
+
 
     @GetMapping("/login")
     public String login(Model model){
@@ -155,7 +158,7 @@ public class UserController {
         return "resetpassword";
     }
 
-    @PostMapping    ("/emailconfirm")
+    @PostMapping ("/emailconfirm")
     public String emailconfirm(@RequestParam("userEmail") String userEmail, Principal principal){
         User user = userRepository.findByEmail(userEmail);
         if(user != null){
@@ -165,5 +168,28 @@ public class UserController {
         }
         return "redirect:/login";
     }
+
+    @GetMapping("/trainerpush")
+    public String trainercertificatepush(Model model){
+        model.addAttribute("backWallp",sliderService.getSliderByType("mainWindHead").get(0).getImageUrl());
+        model.addAttribute("programs", traningProgramService.getAllTraningProgram());
+        return "trainerpush";
+    }
+
+    @PostMapping("/trainerdatapush")
+    public String trainerdatapush(Principal principal, @RequestParam("aboutme") String aboutme, @RequestParam("workexperiens") String workexperiens,
+                                  @RequestParam(value = "selectedPrograms", required = false) String[] selectedPrograms){
+        User user = userService.getUserByPrincipal(principal);
+        if(trainerUsersService.getTrainer(user.getEmail()) == null) {
+            trainerUsersService.creatRequest(user.getEmail(), aboutme, workexperiens, selectedPrograms);
+        }
+        return "redirect:/SportStorm";
+    }
+
+    @GetMapping("/cryptoTransaction")
+    public String cryptoTransaction(){
+        return "cryptopayment";
+    }
+
 
 }

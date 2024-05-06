@@ -22,6 +22,8 @@ public class Contrl {
     private final GymMachinesService gymMachinesService;
     private final JsonService jsonService;
     private final NutrionProgramSevice nutrionProgramSevice;
+    private final UserService userService;
+    private final TrainerUsersService trainerUsersService;
 
     @GetMapping("/main")
     public String redirectMainPage(){
@@ -39,6 +41,9 @@ public class Contrl {
         model.addAttribute("progrList", traningProgramService.getAllTraningProgram());
         model.addAttribute("aboutuslist", aboutUsService.getAllAboutUs());
         model.addAttribute("priceList", priceService.getAllPrice());
+
+        model.addAttribute("carSliderListBody", userService.getAllUsers());
+
         return "main";
     }
 
@@ -79,6 +84,18 @@ public class Contrl {
     public String nutrionProgram(Model model){
         model.addAttribute("nutrionprogramlist", nutrionProgramSevice.getAllNutrionProgram());
         return "nutrionprogram";
+    }
+
+    @GetMapping("/alltrainer")
+    public String redirectAllTrainer(){
+        return "redirect:/all-trainer";
+    }
+
+    @GetMapping("/all-trainer")
+    public String alltrainer(Model model){
+        model.addAttribute("user", userService);
+        model.addAttribute("alltrainerlist", trainerUsersService.getAllTrainer());
+        return "alltrainer";
     }
 
 }
