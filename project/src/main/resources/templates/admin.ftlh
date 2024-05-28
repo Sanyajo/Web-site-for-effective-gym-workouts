@@ -33,10 +33,12 @@
             <th scope="col">Номер телефона</th>
             <th scope="col">Активность</th>
             <th scope="col">Роли</th>
+            <th scope="col">Тип подписки</th>
             <th scope="col">Балланс</th>
             <th scope="col">Бан</th>
             <th scope="col">Изменить роль</th>
             <th scope="col">Изменить баланс</th>
+            <th scope="col">Изменить тип подписки</th>
         </tr>
         <#list users as user>
             <tr>
@@ -48,6 +50,7 @@
                 </#if>
                 <th><#if user.active>true<#else>false</#if></th>
                 <th><#list user.roles as role>${role}</#list></th>
+                <th>${user.typeSub}</th>
                 <th>${user.userBalance}</th>
                 <th>
                     <form action="/admin/user/ban/${user.id}" method="post">
@@ -57,6 +60,7 @@
                 </th>
                 <th><a href="/admin/user/editrole/${user.id}">Изменить роль</a></th>
                 <th><a href="/admin/user/editbalance/${user.id}">Изменить баланс</a></th>
+                <th><a href="/admin/user/edittypesub/${user.id}">Изменить тип подписки</a></th>
             </tr>
         <#else>
             <h3>Пользователей нет</h3>

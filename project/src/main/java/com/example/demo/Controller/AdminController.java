@@ -1,6 +1,5 @@
 package com.example.demo.Controller;
 
-import com.example.demo.Models.TrainerUsers;
 import com.example.demo.Models.User;
 import com.example.demo.Models.enums.Role;
 import com.example.demo.Repository.UserRepo;
@@ -87,6 +86,17 @@ public class AdminController {
         return "redirect:/admin";
     }
 
+    @GetMapping("/admin/user/edittypesub/{user}")
+    public String userEditTypeSub(@PathVariable("user") User user, Model model) {
+        model.addAttribute("user", user);
+        return "useredittypesub";
+    }
+
+    @PostMapping("/admin/user/edittypesub")
+    public String userEditTypeSub(@RequestParam("userId") User user, @RequestParam("typeSub") String param){
+        userService.editTypeSub(user, param);
+        return "redirect:/admin";
+    }
 
 
 }

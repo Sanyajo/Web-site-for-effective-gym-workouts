@@ -56,7 +56,7 @@ public class UserController {
         model.addAttribute("backWallp",sliderService.getSliderByType("mainWindHead").get(0).getImageUrl());
         if (!userService.createUser(user)) {
             model.addAttribute("errorMessage", "Пользователь с email: " + user.getEmail() + " уже существует");
-            log.info("Пользователь с ником: " + user.getName() + " уже существует");
+            log.info("Пользователь с почтой: " + user.getEmail() + " уже существует");
             return "registration";
         }
         return "redirect:/login";

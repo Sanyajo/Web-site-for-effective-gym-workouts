@@ -47,6 +47,8 @@ public class UserService {
         user.setActive(true);
         user.getRoles().add(Role.ROLE_USER);
         user.setUserBalance(0.0);
+        user.setAvatar("/images/mainWind/defaultAvatar.jpg");
+        user.setTypeSub("Бесплатная");
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         log.info("Пользователь с почтой " + userEmail + " создан !");
         userRepository.save(user);
@@ -201,6 +203,11 @@ public class UserService {
    public String getUserAvatar(String email){
         User user = userRepository.findByEmail(email);
         return user.getAvatar();
+    }
+
+    public void editTypeSub(User user, String param){
+        user.setTypeSub(param);
+        userRepository.save(user);
     }
 
 

@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/traningProgram","/traning-program","/traning-programm/**",
                         "/gymmachines","/alltrainer","/all-trainer","/gym-machines",
                         "/nutrionprogram","/nutrion-program", "/endTraining","/renameuser",
-                        "/changeavatar","/resetpassword","/emailconfirm").permitAll()
+                        "/changeavatar","/resetpassword","/emailconfirm","/registration").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

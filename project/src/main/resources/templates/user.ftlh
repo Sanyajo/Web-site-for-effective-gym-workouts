@@ -77,6 +77,18 @@
                                 <p1>Ваш статус: Пользователь</p1>
                             </#switch>
                         </#list>
+
+                        <#switch user.getTypeSub()>
+                            <#case "default">
+                                <p1>Ваш тип подписки: Бесплатная</p1>
+                                <#break>
+                            <#case "paid">
+                                <p1>Ваш тип подписки: Платная</p1>
+                                <#break>
+                            <#default>
+                            <p1>Ваш тип подписки: Бесплатная</p1>
+                        </#switch>
+
                         <div class="userInfoInnerBlockButtonCont">
                             <button onclick="popUpUserName.showModal()" class="userInfoInnerBlockButton">Изменить имя</button>
                             <button onclick="popUpUserPassword.showModal()" class="userInfoInnerBlockButton">Изменить пароль</button>

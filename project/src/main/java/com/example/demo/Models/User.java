@@ -46,6 +46,9 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles = new HashSet<>();
 
+    @Column(name="typesub")
+    private String typeSub;
+
     @CollectionTable(name="user_balance",
             joinColumns = @JoinColumn(name="user_balance"))
     private Double userBalance;
